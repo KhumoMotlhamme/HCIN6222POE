@@ -15,7 +15,7 @@
     <nav>
         <ul>
             <li><a href="#topic-generator">Generator Topic</a></li>
-			<li><a href="#thesis-generator">Thesis Generator</a></li>
+		<li><a href="#thesis-generator">Thesis Generator</a></li>
             <li><a href="#outline-generator">Outline Generator</a></li>
             <li><a href="#citation-generator">Citation Generator</a></li>
             <li><a href="#grammar-checker">Grammar Checker</a></li>
@@ -194,7 +194,7 @@ function generateOutline() {
 	document.querySelector('#generate-citation-button').addEventListener('click', generateCitation);
 
 function generateCitation() {
-    // Replace this with logic to generate a citation based on user input, source details, and the desired citation style.
+    // Replace this with logic to generate a citation based on user input, source details, and citation style.
     const sources = [
         {
             title: 'A History of American Higher Education',
@@ -241,7 +241,7 @@ function generateCitation() {
             inputElement.placeholder = 'Paste your academic paper text here';
             
             const container = document.querySelector('#grammar-check-input-container');
-            container.innerHTML = ''; // Clear previous content
+            container.innerHTML = '';
             container.appendChild(inputElement);
 
             const submitButton = document.createElement('button');
