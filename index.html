@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Paper Writing Assistant</title>
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+	
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Academic Paper Writing Assistant</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#topic-generator">Generator Topic</a></li>
+			<li><a href="#thesis-generator">Thesis Generator</a></li>
+            <li><a href="#outline-generator">Outline Generator</a></li>
+            <li><a href="#citation-generator">Citation Generator</a></li>
+            <li><a href="#grammar-checker">Grammar Checker</a></li>
+            <li><a href="#plagiarism-checker">Plagiarism Checker</a></li>
+        </ul>
+    </nav>
+
+    <main>
+		<section id="topic-generator">
+            <h2>Topic Generator</h2>
+            <button id="generate-topic-button">Generate a random academic paper topic</button>
+            <button id="generate-custom-topic-button">Generate a custom academic paper topic</button>
+            <div id="custom-topic-input-container"></div>
+            <p class="generated-content"></p>
+		</section>
+
+        <section id="thesis-generator">
+			<h2>Thesis Generator</h2>
+			<button id="generate-thesis-button">Generate a clear and concise thesis statement</button>
+			<p class="generated-content"></p>
+		</section>
+
+		<section id="outline-generator">
+			<h2>Outline Generator</h2>
+			<button id="generate-outline-button">Generate an outline for your academic paper</button>
+			<p class="generated-content"></p>
+		</section>
+
+		<section id="citation-generator">
+			<h2>Citation Generator</h2>
+			<button id="generate-citation-button">Generate a citation for your sources</button>
+			<p class="generated-content"></p>
+		</section>
+
+		<section id="grammar-checker">
+            <h2>Grammar Checker</h2>
+            <button id="check-grammar-button">Check grammar in your academic paper</button>
+            <div id="grammar-check-input-container"></div>
+            <p class="generated-content"></p>
+        </section>
+
+        <section id="plagiarism-checker">
+            <h2>Plagiarism Checker</h2>
+            <button id="check-plagiarism-button">Check plagiarism in your academic paper</button>
+            <div id="plagiarism-check-input-container"></div>
+            <p class="generated-content"></p>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 Academic Paper Writing Assistant. ST10024123</p>
+    </footer>
+	
+	
+	
+
+
+<script>
+    // Topic Generator
+    document.querySelector('#generate-topic-button').addEventListener('click', generateRandomTopic);
+    document.querySelector('#generate-custom-topic-button').addEventListener('click', generateCustomTopic);
+
+    function generateRandomTopic() {
+        // Array of example topics
+        const topics = [
+            'The Impact of Climate Change on Agriculture',
+            'The Role of Artificial Intelligence in Healthcare',
+            'Cybersecurity Challenges in the Modern World',
+            'The History of Renaissance Art',
+            'Challenges and Opportunities in Space Exploration',
+        ];
+
+        const randomIndex = Math.floor(Math.random() * topics.length);
+        const generatedTopic = topics[randomIndex];
+
+        // Display the generated topic within the same section
+        document.querySelector('#topic-generator .generated-content').textContent = generatedTopic;
+    }
+
+    function generateCustomTopic() {
+            // Create a text input element
+            const inputElement = document.createElement('input');
+            inputElement.type = 'text';
+            inputElement.placeholder = 'Enter your custom topic here';
+            
+            // Append the input element to the container
+            const container = document.querySelector('#custom-topic-input-container');
+            container.innerHTML = ''; // Clear previous content
+            container.appendChild(inputElement);
+
+            // Add a button to submit the custom topic
+            const submitButton = document.createElement('button');
+            submitButton.textContent = 'Submit Custom Topic';
+            submitButton.addEventListener('click', function() {
+                const customTopic = inputElement.value || "Your custom topic goes here.";
+                document.querySelector('#topic-generator .generated-content').textContent = customTopic;
+            });
+            container.appendChild(submitButton);
+    }
+	
+	
+	document.querySelector('#generate-thesis-button').addEventListener('click', generateThesis);
+
+	function generateThesis() {
+    // Array of example thesis statement components
+    const subjects = [
+        'The impact of technology on',
+        'The importance of education in',
+        'The challenges of',
+        'The benefits of',
+        'The role of government in',
+    ];
+
+    const actions = [
+        'improving',
+        'addressing',
+        'enhancing',
+        'solving',
+        'understanding',
+    ];
+
+    const topics = [
+        'sustainable agriculture',
+        'mental health awareness',
+        'climate change mitigation',
+        'economic development',
+        'cybersecurity',
+    ];
+
+    // Randomly select components to generate a thesis statement
+    const randomSubject = subjects[Math.floor(Math.random() * subjects.length)];
+    const randomAction = actions[Math.floor(Math.random() * actions.length)];
+    const randomTopic = topics[Math.floor(Math.random() * topics.length)];
+
+    // Construct the thesis statement
+    const thesisStatement = `This paper explores ${randomSubject} ${randomTopic} by ${randomAction} various aspects.`;
+
+    // Display the generated thesis statement
+    document.querySelector('#thesis-generator .generated-content').textContent = thesisStatement;
+}
+
+
+
+	document.querySelector('#generate-outline-button').addEventListener('click', generateOutline);
+
+function generateOutline() {
+    // Replace this with logic to generate an outline based on user input or a specific topic.
+    const outline = `
+    I. Introduction
+       A. Background
+       B. Problem Statement
+       C. Purpose
+    II. Literature Review
+       A. Relevant Research
+       B. Theoretical Framework
+    III. Methodology
+       A. Data Collection
+       B. Data Analysis
+    IV. Findings
+       A. Key Results
+    V. Discussion
+       A. Interpretation of Results
+       B. Implications
+    VI. Conclusion
+       A. Summary
+       B. Future Work
+    `;
+
+    // Display the generated outline
+    document.querySelector('#outline-generator .generated-content').textContent = outline;
+}
+
+
+
+
+	document.querySelector('#generate-citation-button').addEventListener('click', generateCitation);
+
+function generateCitation() {
+    // Replace this with logic to generate a citation based on user input, source details, and the desired citation style.
+    const sources = [
+        {
+            title: 'A History of American Higher Education',
+            author: 'John R Thelin',
+            publicationYear: '2004',
+            publicationCity: 'New York',
+        },
+        {
+            title: 'College (un)Bound: The Future of Higher Education and What It Means for Students',
+            author: 'Jane Smith',
+            publicationYear: '2013',
+            publicationCity: 'Los Angeles',
+        },
+        {
+            title: 'Paying for the Party: How College Maintains Inequality',
+            author: 'Laura Hamilton',
+            publicationYear: '2013',
+            publicationCity: 'Online',
+        },
+		{
+			title: 'The College Administrators Survival Guide',
+			author: 'J.K Rowling',
+			publicationYear: '2006',
+			publicationCity: 'Chicago',
+		},
+    ];
+
+    // Generate citations for each source
+    const citations = sources.map(source => {
+        return `${source.author}. (${source.publicationYear}). ${source.title}. ${source.publicationCity}.`;
+    });
+
+    // Display the generated citations
+    document.querySelector('#citation-generator .generated-content').textContent = citations.join('\n\n');
+}
+
+
+
+
+	document.querySelector('#check-grammar-button').addEventListener('click', checkGrammar);
+
+        function checkGrammar() {
+            const inputElement = document.createElement('textarea');
+            inputElement.placeholder = 'Paste your academic paper text here';
+            
+            const container = document.querySelector('#grammar-check-input-container');
+            container.innerHTML = ''; // Clear previous content
+            container.appendChild(inputElement);
+
+            const submitButton = document.createElement('button');
+            submitButton.textContent = 'Submit Text for Grammar Check';
+            submitButton.addEventListener('click', function() {
+                const grammarCheckResult = "Your grammar has been checked :)."; // Replace with actual grammar check logic
+                document.querySelector('#grammar-checker .generated-content').textContent = grammarCheckResult;
+            });
+            container.appendChild(submitButton);
+        }
+
+        document.querySelector('#check-plagiarism-button').addEventListener('click', checkPlagiarism);
+
+        function checkPlagiarism() {
+            const inputElement = document.createElement('textarea');
+            inputElement.placeholder = 'Paste your academic paper text here';
+            
+            const container = document.querySelector('#plagiarism-check-input-container');
+            container.innerHTML = ''; // Clear previous content
+            container.appendChild(inputElement);
+
+            const submitButton = document.createElement('button');
+            submitButton.textContent = 'Submit Text for Plagiarism Check';
+            submitButton.addEventListener('click', function() {
+                const plagiarismCheckResult = "2% Plagiarism detected..."; // Replace with actual plagiarism check logic
+                document.querySelector('#plagiarism-checker .generated-content').textContent = plagiarismCheckResult;
+            });
+            container.appendChild(submitButton);
+        }
+
+</script>
+
+
+
+
+	
+	
+</body>
+</html>

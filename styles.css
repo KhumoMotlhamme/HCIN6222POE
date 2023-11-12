@@ -1,0 +1,181 @@
+/* Reset some default styles for consistency */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Navigation menu styling */
+nav {
+    background-color: #005f91;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main content styling */
+main {
+    padding: 2rem;
+}
+
+section {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: #0077b6;
+}
+
+/* Footer styling */
+footer {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 0.5rem 0;
+    }
+}
+
+/* nav hover effect */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.03s; /* Add a smooth color transition on hover */
+}
+
+nav ul li a:hover {
+    color: #ff5733; /* Change the color on hover (you can use any color you prefer) */
+}
+
+
+/* Button styling */
+button {
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        outline: none; /* Remove the default outline */
+    }
+
+    button:hover, button:focus {
+        background-color: #005f91;
+        transform: scale(1.05);
+    }
+
+/* Specific button styles */
+#generate-topic-button {
+    background-color: #0077b6; /* Blue color for Generate Topic */
+}
+
+#generate-custom-topic-button {
+    background-color: #ff5733; /* Red color for Generate Custom Topic */
+}
+
+#generate-thesis-button {
+    background-color: #009432; /* Green color for Generate Thesis */
+}
+
+#generate-outline-button {
+    background-color: #f8b400; /* Yellow color for Generate Outline */
+}
+
+#generate-citation-button {
+    background-color: #4b0082; /* Indigo color for Generate Citation */
+}
+
+#check-grammar-button {
+    background-color: #6a0572; /* Purple color for Check Grammar */
+}
+
+#check-plagiarism-button {
+    background-color: #f07f13; /* Orange color for Check Plagiarism */
+}
+
+
+/* Hover effect for the sections */
+section {
+    background-color: beige; /* Change the background color to beige */
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #0077b6;
+}
+
+
+/* Set the background image and initial styles for the parallax section */
+/* Apply the parallax effect */
+.parallax {
+    background-image: url('images/Galaxy.jpg'); /* Use a relative path */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Additional styling for other content */
+.content {
+    padding: 2rem;
+}
+
+// Define the parallax effect on scroll
+window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const parallaxElement = document.querySelector('.parallax');
+    parallaxElement.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
+});
