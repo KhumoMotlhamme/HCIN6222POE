@@ -1,4 +1,4 @@
-/* Reset some default styles for consistency */
+/* Resetting some default styles for consistency */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
@@ -83,11 +83,11 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.03s; /* Add a smooth color transition on hover */
+    transition: color 0.03s;
 }
 
 nav ul li a:hover {
-    color: #ff5733; /* Change the color on hover (you can use any color you prefer) */
+    color: #ff5733;
 }
 
 
@@ -99,7 +99,7 @@ button {
         padding: 10px 20px;
         cursor: pointer;
         transition: background-color 0.3s, transform 0.2s;
-        outline: none; /* Remove the default outline */
+        outline: none; 
     }
 
     button:hover, button:focus {
